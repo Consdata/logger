@@ -1,11 +1,15 @@
 {
-  "name": "consdata-tslint",
-  "version": "1.0.0",
+  "name": "@consdata/tslint-config",
+  "version": "1.0.3",
   "description": "Consdata common TSLint rules",
   "main": "tslint.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Consdata/tslint-config.git"
+  }
 }
