@@ -99,7 +99,12 @@
       "check-separator",
       "check-type"
     ],
-    "directive-selector": false,
+    "directive-selector": [
+      true,
+      "attribute",
+      "",
+      "camelCase"
+    ],
     "component-selector": false,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
