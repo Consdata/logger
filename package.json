@@ -1,6 +1,6 @@
 {
   "name": "@consdata/tslint-config",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Consdata common TSLint rules",
   "main": "tslint.json",
   "scripts": {
