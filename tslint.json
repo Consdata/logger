@@ -1,7 +1,4 @@
 {
-  "extends": [
-    "tslint-defocus"
-  ],
   "rulesDirectory": [
     "codelyzer"
   ],
@@ -121,7 +118,6 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": false,
     "directive-class-suffix": false,
-    "no-access-missing-member": false,
-    "defocus": true
+    "no-access-missing-member": false
   }
 }
