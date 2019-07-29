@@ -7,9 +7,6 @@ before_deploy:
   - git remote add origin-token https://${GitHub_Token}@github.com/Consdata/tslint-config.git
   - git checkout master
   - npm version minor
-  - git status
-  - git add .
-  - git commit -m '[skip travis] version bump'
   - git push origin-token master
 deploy:
   provider: npm
