@@ -4,8 +4,8 @@
   "description": "Consdata common TSLint rules",
   "main": "tslint.json",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm version patch && git push --all && npm publish"
+    "test": "echo running",
+    "release": "npm version minor && git push --all && npm publish"
   },
   "author": "",
   "license": "MIT",
