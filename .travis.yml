@@ -5,7 +5,7 @@ before_deploy:
   - git config --local user.name "Travis"
   - git config --local user.email "grzegorz.lipecki@gmail.com"
   - git remote add origin-token https://${GitHub_Token}@github.com/Consdata/tslint-config.git
-  - npm version minor -m "[skip travis] version release: %s"
+  - npm version minor -m '[skip travis] version release: %s'
   - git push origin-token master
 deploy:
   provider: npm
