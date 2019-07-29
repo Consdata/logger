@@ -1,6 +1,7 @@
 language: node_js
 script:
 - npm test
+before_deploy: "npm version minor"
 deploy:
   provider: npm
   email: grzegorz.lipecki@gmail.com
