@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@logger/logger/api": ["libs/logger/api/src/index.ts"],
+      "@logger/logger/console": ["libs/logger/console/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
