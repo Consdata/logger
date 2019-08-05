@@ -12,5 +12,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Consdata/tslint-config.git"
+  },
+  "dependencies": {
+    "tslint-defocus": "2.0.6"
   }
 }
