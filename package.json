@@ -4,8 +4,9 @@
   "description": "Consdata common TSLint rules",
   "main": "tslint.json",
   "scripts": {
-    "test": "echo running",
-    "release": "npm version minor && git push --all && npm publish"
+    "test": "jest",
+    "build": "tsc",
+    "release": "npm run-script build && npm version minor && git push --all && npm publish"
   },
   "author": "",
   "license": "MIT",
@@ -13,7 +14,26 @@
     "type": "git",
     "url": "https://github.com/Consdata/tslint-config.git"
   },
+  "devDependencies": {
+    "@types/jest": "23.0.0",
+    "jest": "23.1.0",
+    "ts-jest": "22.4.6",
+    "typescript": "2.9.1",
+    "tslint": "5.18.0"
+  },
   "dependencies": {
     "tslint-defocus": "2.0.6"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts", "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/**/*.spec.ts"
+    ],
+    "testEnvironment": "node"
   }
 }
