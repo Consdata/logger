@@ -1,6 +1,6 @@
 {
   "name": "@consdata/tslint-config",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Consdata common TSLint rules",
   "main": "tslint.json",
   "scripts": {
@@ -26,7 +26,8 @@
   },
   "jest": {
     "moduleFileExtensions": [
-      "ts", "js"
+      "ts",
+      "js"
     ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
