@@ -12,6 +12,7 @@ before_deploy:
   - npm version minor -m "[skip travis] version release"
   - git push origin-token master
 deploy:
+  skip_cleanup: true
   provider: npm
   email: grzegorz.lipecki@gmail.com
   api_key:
