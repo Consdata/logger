@@ -3,6 +3,7 @@ node_js:
   - "10"
 script:
 - npm test
+- npm run-script build
 before_deploy:
   - git config --local user.name "Travis"
   - git config --local user.email "grzegorz.lipecki@gmail.com"
