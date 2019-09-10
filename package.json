@@ -1,0 +1,14 @@
+{
+  "name": "@consdata/logger",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}
