@@ -103,6 +103,11 @@
     "@angular-devkit/core" "8.1.1"
     rxjs "6.4.0"
 
+"@angular-eslint/builder@0.0.1-alpha.16":
+  version "0.0.1-alpha.16"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-0.0.1-alpha.16.tgz#c8af30ed1e778138139353627ec8d51543237e12"
+  integrity sha512-VwpFd2fcp7FCEmOtef9VkteFwyVpIzciNn0pvlWvHgwJWGyKyT5NVRpVvUAWBdHgja1jl67h0B9uDFMqWUBTjw==
+
 "@angular/compiler-cli@8.1.2":
   version "8.1.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-8.1.2.tgz#1b20c3e53520bf8bbece4ba88171dec79eb78e9c"
@@ -980,6 +985,19 @@
     tsconfig-paths-webpack-plugin "3.2.0"
     webpack-node-externals "1.7.2"
 
+"@nrwl/cypress@8.4.13":
+  version "8.4.13"
+  resolved "https://registry.yarnpkg.com/@nrwl/cypress/-/cypress-8.4.13.tgz#92deee05723019e113aaf45ed382811e8329dc8e"
+  integrity sha512-j/ngDzBmAcmoPY6ZsX4+GiS71QtK+kuLjgv1cZUViQqeILCep7VrbB8YD8AmfmBSFk3XbiHUTwa0gmEbQsnQbQ==
+  dependencies:
+    "@angular-devkit/architect" "0.801.1"
+    "@angular-devkit/core" "8.1.1"
+    "@cypress/webpack-preprocessor" "~4.1.0"
+    tree-kill "1.2.1"
+    ts-loader "5.3.1"
+    tsconfig-paths-webpack-plugin "3.2.0"
+    webpack-node-externals "1.7.2"
+
 "@nrwl/jest@8.4.1":
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-8.4.1.tgz#6cbf95c1a7d48b342d07ee11861af1db0c8db619"
@@ -989,13 +1007,23 @@
     "@angular-devkit/core" "8.1.1"
     "@angular-devkit/schematics" "8.1.1"
 
-"@nrwl/linter@8.4.1":
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/@nrwl/linter/-/linter-8.4.1.tgz#d0eff26023bc8c6fd3d729c79b45c9bca2eaab4d"
-  integrity sha512-PV4QmK86ET8ZxFuiaW2Hw6JWUp4E26vV60VSWmeiYkvssHDQHQaV1e6zwUcn8EUw4EiEpZWPvLaDemjr5aV82w==
+"@nrwl/jest@8.4.13":
+  version "8.4.13"
+  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-8.4.13.tgz#21b3d6efe77d4dcdd02dc48f1d99e861676b8d61"
+  integrity sha512-96bZ1O2zA4MkFQxAJPbuPYlB48fzpvOuZMpqj1hoL2XPjuitPXW5xxj5gHAl1mPWacSOgq/MB3aI3QNMYmloVg==
+  dependencies:
+    "@angular-devkit/architect" "0.801.1"
+    "@angular-devkit/core" "8.1.1"
+    "@angular-devkit/schematics" "8.1.1"
+
+"@nrwl/linter@8.4.13":
+  version "8.4.13"
+  resolved "https://registry.yarnpkg.com/@nrwl/linter/-/linter-8.4.13.tgz#9c50b7041937f66ffea0548551f6d4212fcd16e4"
+  integrity sha512-fN8HTeiZ8j7etFXaoyeSWLjZhU+zk3OPOvRmYEbCaatmgmY4gnDE5qAFfrOjtiss+IIuUupb+ER1RN638NlKUQ==
   dependencies:
     "@angular-devkit/architect" "0.801.1"
     "@angular-devkit/build-angular" "0.801.1"
+    "@angular-eslint/builder" "0.0.1-alpha.16"
     "@angular/compiler" "8.1.2"
     "@angular/compiler-cli" "8.1.2"
 
@@ -1010,10 +1038,10 @@
     inquirer "^6.3.1"
     minimist "^1.2.0"
 
-"@nrwl/web@8.4.1":
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/@nrwl/web/-/web-8.4.1.tgz#cc20442dbee47d8b4be07f595f4852b9c8de52af"
-  integrity sha512-v045YWx0t4CliNA5k3bMRctBWGNbC9SCSYG4AWY2PdJIkPZ8YFAscKNRdg2nAFxsae2H+TaCDnO+aJvJJddNsA==
+"@nrwl/web@^8.4.13":
+  version "8.4.13"
+  resolved "https://registry.yarnpkg.com/@nrwl/web/-/web-8.4.13.tgz#500c2dc920defc6140c3df2b198150272026a472"
+  integrity sha512-ItEjOtkIL0H2owzPpKh0lZXHmJj2YHWrIp3k9QiRLrGFYFklHeFrANGjl/z68VzxTrWhHy7zsB3N59/ujLkTMQ==
   dependencies:
     "@angular-devkit/architect" "0.801.1"
     "@angular-devkit/build-angular" "0.801.1"
@@ -1022,9 +1050,9 @@
     "@angular-devkit/schematics" "8.1.1"
     "@angular/compiler" "8.1.2"
     "@angular/compiler-cli" "8.1.2"
-    "@nrwl/cypress" "8.4.1"
-    "@nrwl/jest" "8.4.1"
-    "@nrwl/linter" "8.4.1"
+    "@nrwl/cypress" "8.4.13"
+    "@nrwl/jest" "8.4.13"
+    "@nrwl/linter" "8.4.13"
     copy-webpack-plugin "4.6.0"
     fork-ts-checker-webpack-plugin "0.4.9"
     identity-obj-proxy "3.0.0"

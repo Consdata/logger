@@ -1,1 +1,1 @@
-export * from './lib/logger-console';
+export * from './lib/console-log-appender';

@@ -1,16 +1,19 @@
-import { Logger } from '../logger/logger';
-import { LogAppender } from './log-appender';
-import { LogEntryContext } from './log-entry-context';
-import { LogLevel } from './log-level';
-import { LogEntry } from './log-entry';
+import {Logger} from '../logger/logger';
+import {LogAppender} from './log-appender';
+import {LogEntry} from '../entry/log-entry';
+import {LogEntryContext} from '../entry/log-entry-context';
+import {LogLevel} from '../level/log-level';
+import {LogLevelProvider} from '../level/log-level-provider';
 
 export class LoggerWithAppenders implements Logger {
+
   constructor(
     private name: string,
     private appenders: () => LogAppender[],
     private context: () => LogEntryContext,
-    private logLevel: () => LogLevel
-  ) {}
+    private logLevel: () => LogLevelProvider
+  ) {
+  }
 
   error(message: string, ...params) {
     if (params.length > 0 && params[params.length - 1] instanceof Error) {
@@ -43,7 +46,7 @@ export class LoggerWithAppenders implements Logger {
     params: any[],
     error?: Error
   ) {
-    if (level >= this.logLevel()) {
+    if (level >= this.logLevel().logLevel(this.name)) {
       const date = new Date();
       const logEntry: LogEntry = {
         date: this.now(date),
@@ -89,4 +92,5 @@ export class LoggerWithAppenders implements Logger {
       return result;
     }
   }
+
 }

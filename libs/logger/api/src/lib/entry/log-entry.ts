@@ -1,4 +1,4 @@
-import { LogLevel } from './log-level';
+import { LogLevel } from '../level/log-level';
 import { LogEntryContext } from './log-entry-context';
 
 export interface LogEntry {
