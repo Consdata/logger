@@ -2,7 +2,7 @@ import {LogLevel, LogLevelProvider} from '@consdata/logger-api';
 import {LocationUtil} from './location-util';
 
 interface LogLevels {
-  [key: string]: LogLevel
+  [key: string]: LogLevel;
 }
 
 export class QueryParamsLogLevelProvider implements LogLevelProvider {
@@ -30,7 +30,7 @@ export class QueryParamsLogLevelProvider implements LogLevelProvider {
       }
       if (val && key.indexOf(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM) === 0) {
         // substring log level tag and dot suffix
-        const loggerName = key.substr(key.indexOf(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM) + QueryParamsLogLevelProvider.LOG_LEVEL_PARAM.length + 1);
+        const loggerName = key.substr(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM.length + 1);
         this.loggers[loggerName] = LogLevel[val];
       }
     });

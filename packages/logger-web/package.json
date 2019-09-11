@@ -1,6 +1,6 @@
 {
   "name": "@consdata/logger-web",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -43,5 +43,5 @@
     "typedoc": "0.15.0",
     "typescript": "3.3.3333"
   },
-  "gitHead": "233803ee487e0364c252772cbe1070ac0cb00a52"
+  "gitHead": "2bccc9df795f25148e8a8f30ddebf90926d9180d"
 }
