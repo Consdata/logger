@@ -1,6 +1,6 @@
 {
   "name": "@consdata/logger-web",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -27,7 +27,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@consdata/logger-api": "^0.2.0"
+    "@consdata/logger-api": "^0.3.0"
   },
   "devDependencies": {
     "@types/jest": "24.0.9",

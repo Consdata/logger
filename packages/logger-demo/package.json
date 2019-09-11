@@ -1,7 +1,7 @@
 {
   "name": "@consdata/logger-demo",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
@@ -16,9 +16,9 @@
     "build": "yarn build:compile && yarn build:lint && yarn build:test"
   },
   "dependencies": {
-    "@consdata/logger-api": "^0.2.0",
-    "@consdata/logger-console": "^0.2.0",
-    "@consdata/logger-web": "^0.2.0"
+    "@consdata/logger-api": "^0.3.0",
+    "@consdata/logger-console": "^0.3.0",
+    "@consdata/logger-web": "^0.3.0"
   },
   "devDependencies": {
     "@types/jest": "24.0.9",
