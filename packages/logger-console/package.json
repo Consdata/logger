@@ -23,6 +23,9 @@
     "docs": "typedoc --out dist/docs --target es5 --theme default --mode file --tsconfig src/tsconfig.lib.json --excludePrivate --excludeProtected --exclude '**/*.spec.ts' src",
     "prepublish": "yarn build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@consdata/logger-api": "^0.1.2"
   },
@@ -40,5 +43,5 @@
     "typedoc": "0.15.0",
     "typescript": "3.3.3333"
   },
-  "gitHead": "43be0ea014db1699d610269924ef4c6559f965ca"
+  "gitHead": "233803ee487e0364c252772cbe1070ac0cb00a52"
 }
