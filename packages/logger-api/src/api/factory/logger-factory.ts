@@ -32,7 +32,7 @@ export abstract class LoggerFactory {
   }
 
   private static loggers: { [key: string]: Logger } = {};
-  private static rootLogLevel = LogLevel.ERROR;
+  private static rootLogLevel = LogLevel.OFF;
   private static appenders: LogAppender[] = [];
   private static context: LogEntryContext = {};
   private static logLevelProviders: LogLevelProvider[] = [];
