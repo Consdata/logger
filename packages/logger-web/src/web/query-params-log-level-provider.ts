@@ -27,8 +27,7 @@ export class QueryParamsLogLevelProvider implements LogLevelProvider {
       const val = searchParams[key];
       if (val && key === QueryParamsLogLevelProvider.LOG_LEVEL_PARAM) {
         this.root = LogLevel[val];
-      }
-      if (val && key.indexOf(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM) === 0) {
+      } else if (val && key.indexOf(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM) === 0) {
         // substring log level tag and dot suffix
         const loggerName = key.substr(QueryParamsLogLevelProvider.LOG_LEVEL_PARAM.length + 1);
         this.loggers[loggerName] = LogLevel[val];
