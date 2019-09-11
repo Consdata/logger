@@ -21,7 +21,7 @@
     "build": "yarn build:compile && yarn build:lint && yarn build:test && yarn build:bundle && yarn docs && yarn build:dist",
     "watch": "tsc -p src/tsconfig.lib.json -w --no-emit",
     "docs": "typedoc --out dist/docs --target es5 --theme default --mode file --tsconfig src/tsconfig.lib.json --excludePrivate --excludeProtected --exclude '**/*.spec.ts' src",
-    "release": "yarn build && yarn publish --minor --non-interactive --access public && git push && git push --tags"
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "@consdata/logger-api": "0.1.0"
