@@ -1,5 +1,6 @@
 import {LogEntry, LoggerFactory, LogLevel} from '@consdata/logger-api';
 import {ConsoleLogAppender} from '@consdata/logger-console';
+import {QueryParamsLogLevelProvider} from '@consdata/logger-web';
 
 LoggerFactory.addAppender(ConsoleLogAppender.instance);
 LoggerFactory.addAppender({
@@ -9,6 +10,7 @@ LoggerFactory.addAppender({
   },
 });
 LoggerFactory.setRootLogLevel(LogLevel.INFO);
+LoggerFactory.addLogLevelProvider(QueryParamsLogLevelProvider.instance);
 LoggerFactory.addLogLevelProvider({
   logLevel(name: string): LogLevel {
     if (name === 'DebugLogger') {
