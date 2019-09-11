@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 node_modules
+dist/
+tmp/
+out-tsc/
+.build/
 /.idea
 .project
 .classpath
