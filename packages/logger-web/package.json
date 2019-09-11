@@ -1,0 +1,47 @@
+{
+  "name": "@consdata/logger-web",
+  "version": "0.1.2",
+  "license": "MIT",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "lib-upgrade": "yarn upgrade-interactive --latest",
+    "test": "jest --passWithNoTests",
+    "lint": "tslint 'src/**/*.ts' -p src/tsconfig.lib.json",
+    "prebuild": "rimraf .build && rimraf dist",
+    "postbuild": "rimraf .build",
+    "build:compile": "tsc -p src/tsconfig.lib.json",
+    "build:test": "yarn test --coverage --coverageDirectory '../dist/coverage'",
+    "build:lint": "yarn lint",
+    "build:bundle": "rollup -c rollup.config.js",
+    "build:dist": "copyfiles -u 3 '.build/**/*.d.ts' dist",
+    "build:coverage": "cat dist/coverage/lcov.info | coveralls",
+    "build": "yarn build:compile && yarn build:lint && yarn build:test && yarn build:bundle && yarn docs && yarn build:dist",
+    "watch": "tsc -p src/tsconfig.lib.json -w --no-emit",
+    "docs": "typedoc --out dist/docs --target es5 --theme default --mode file --tsconfig src/tsconfig.lib.json --excludePrivate --excludeProtected --exclude '**/*.spec.ts' src",
+    "prepublish": "yarn build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@consdata/logger-api": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.9",
+    "concurrently": "4.1.0",
+    "copyfiles": "2.1.0",
+    "coveralls": "3.0.3",
+    "jest": "24.1.0",
+    "rimraf": "2.6.3",
+    "rollup": "1.3.3",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "ts-jest": "24.0.1",
+    "tslint": "5.13.0",
+    "typedoc": "0.15.0",
+    "typescript": "3.3.3333"
+  },
+  "gitHead": "233803ee487e0364c252772cbe1070ac0cb00a52"
+}
