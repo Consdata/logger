@@ -39,5 +39,6 @@
     "tslint": "5.13.0",
     "typedoc": "0.15.0",
     "typescript": "3.3.3333"
-  }
+  },
+  "gitHead": "8dac2a0b053281726d945da4651cced09e4f6bca"
 }
