@@ -1,5 +1,5 @@
-// const stringify: any = require('json-stringify-safe');
-import * as stringify from 'json-stringify-safe';
+import * as stringify_ from 'json-stringify-safe';
+const stringify = stringify_;
 
 export class StringUtil {
 
