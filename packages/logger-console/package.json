@@ -27,8 +27,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@consdata/logger-api": "^0.6.0",
-    "json-stringify-safe": "5.0.1"
+    "@consdata/logger-api": "^0.6.0"
   },
   "devDependencies": {
     "@types/jest": "24.0.9",

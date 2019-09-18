@@ -48,6 +48,7 @@ describe('ConsoleMessageBuilder', () => {
     child.parent = parent;
 
     const message = builder.build(entry('{}', [child]));
+    console.log(message);
 
     expect(message).toContain(`{"id":"child","parent":{"child":"[Circular ~]","id":"parent"}}`);
   });
