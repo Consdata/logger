@@ -3,7 +3,7 @@ import * as stringify from 'json-stringify-safe';
 
 export class StringUtil {
 
-  public static trim(value: string, maxLength: number, ellipsis: string = '...'): string {
+  public static truncate(value: string, maxLength: number, ellipsis: string = '...'): string {
     return value.length >= maxLength ? value.substring(0, maxLength - ellipsis.length) + ellipsis : value;
   }
 
@@ -18,7 +18,7 @@ export class StringUtil {
     } else if (typeof object === 'object') {
       try {
         const stringifiedObject: string = stringify(object, null, null, null);
-        return StringUtil.trim(stringifiedObject, 100);
+        return StringUtil.truncate(stringifiedObject, 100);
       } catch (error) {
         return `Can't serialize object [msg=${error.message ? error.message : error}]`;
       }
