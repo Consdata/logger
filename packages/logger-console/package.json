@@ -41,7 +41,8 @@
     "ts-jest": "24.0.1",
     "tslint": "5.13.0",
     "typedoc": "0.15.0",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.3333",
+    "rxjs": "6.5.3"
   },
   "gitHead": "c56c3ffd6251a21074c62e546d8e93a519e121b6"
 }

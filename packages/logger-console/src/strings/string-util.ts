@@ -5,8 +5,8 @@ export class StringUtil {
   }
 
   public static safeStringify(object: any): string {
+    const seen = [];
     const circularReplacer = () => {
-      const seen = [];
       return (key, value) => {
         if (typeof value === 'object' && value !== null) {
           if (seen.indexOf(value) >= 0) {
