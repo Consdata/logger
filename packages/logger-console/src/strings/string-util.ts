@@ -17,7 +17,11 @@ export class StringUtil {
         return value;
       };
     };
-    return JSON.stringify(object, circularReplacer());
+    if (object.asStringifyObject) {
+      return JSON.stringify(object.asStringifyObject(), circularReplacer());
+    } else {
+      return JSON.stringify(object, circularReplacer());
+    }
   }
 
 }
