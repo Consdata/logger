@@ -5,6 +5,21 @@ export class StringUtil {
   }
 
   public static safeStringify(object: any): string {
+    if (object instanceof Error) {
+      return StringUtil.stringify({
+        message: object.toString(),
+        stack: object.stack,
+      });
+    } else if (object.asStringifyObject) {
+      return StringUtil.stringify(object.asStringifyObject());
+    } else if (typeof object === 'object') {
+      return StringUtil.stringify(object);
+    } else {
+      return `${object}`;
+    }
+  }
+
+  private static stringify(object: any): string {
     const seen = [];
     const circularReplacer = () => {
       return (key, value) => {
@@ -17,11 +32,7 @@ export class StringUtil {
         return value;
       };
     };
-    if (object.asStringifyObject) {
-      return JSON.stringify(object.asStringifyObject(), circularReplacer());
-    } else {
-      return JSON.stringify(object, circularReplacer());
-    }
+    return JSON.stringify(object, circularReplacer());
   }
 
 }

@@ -12,11 +12,15 @@ describe('StringUtil', () => {
   });
 
   it('should stringify string', () => {
-    expect(StringUtil.safeStringify('abc')).toBe('"abc"');
+    expect(StringUtil.safeStringify('abc')).toBe('abc');
   });
 
   it('should stringify object', () => {
     expect(StringUtil.safeStringify({name: 'John'})).toBe(`{"name":"John"}`);
+  });
+
+  it('should stringify exception', () => {
+    expect(StringUtil.safeStringify(new Error('Test error'))).not.toBeUndefined();
   });
 
   it('should stringify rxjs.subject', () => {
