@@ -45,9 +45,9 @@
     "no-console": true,
     "no-construct": true,
     "no-debugger": true,
-    "no-duplicate-variable": true,
+    "no-duplicate-variable": false,
     "no-empty": false,
-    "no-empty-interface": true,
+    "no-empty-interface": false,
     "no-eval": true,
     "no-inferrable-types": false,
     "no-shadowed-variable": true,
@@ -56,7 +56,7 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-use-before-declare": true,
+    "no-use-before-declare": false,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "one-line": [
@@ -73,6 +73,7 @@
     ],
     "radix": true,
     "semicolon": [
+      true,
       "always"
     ],
     "triple-equals": [
@@ -96,7 +97,7 @@
         "variable-declaration": "nospace"
       }
     ],
-    "unified-signatures": true,
+    "unified-signatures": false,
     "variable-name": false,
     "whitespace": [
       true,
@@ -112,17 +113,22 @@
       "",
       "camelCase"
     ],
-    "component-selector": false,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
+    "component-selector": [
+      true, 
+      "element", 
+      "", 
+      "kebab-case"
+    ],
+    "no-inputs-metadata-property": true,
+    "no-outputs-metadata-property": true,
+    "no-host-metadata-property": true,
+    "no-input-rename": false,
+    "no-output-rename": false,
+    "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
-    "component-class-suffix": false,
-    "directive-class-suffix": false,
-    "no-access-missing-member": false,
+    "component-class-suffix": true,
+    "directive-class-suffix": true,
+    "no-access-missing-member": true,
     "defocus": true,
     "finnish-notation": true
   }
