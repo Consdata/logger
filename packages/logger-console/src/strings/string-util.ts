@@ -10,10 +10,14 @@ export class StringUtil {
         message: object.toString(),
         stack: object.stack,
       });
-    } else if (object.asStringifyObject) {
+    } else if (object && object.asStringifyObject) {
       return StringUtil.stringify(object.asStringifyObject());
     } else if (typeof object === 'object') {
       return StringUtil.stringify(object);
+    } else if (object === null) {
+      return 'null';
+    } else if (object === undefined) {
+      return 'undefined';
     } else {
       return `${object}`;
     }

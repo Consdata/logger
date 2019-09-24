@@ -26,6 +26,18 @@ describe('ConsoleMessageBuilder', () => {
     expect(message).toContain('Ala');
   });
 
+  it('should build message with null param', () => {
+    const message = builder.build(entry('{}', [null]));
+
+    expect(message).toContain('null');
+  });
+
+  it('should build message with undefined param', () => {
+    const message = builder.build(entry('{}', [undefined]));
+
+    expect(message).toContain('undefined');
+  });
+
   it('should build message with json params', () => {
     const param = {
       name: 'Ala',
