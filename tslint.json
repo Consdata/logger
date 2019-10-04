@@ -71,7 +71,7 @@
       true,
       "single"
     ],
-    "radix": true,
+    "radix": false,
     "semicolon": [
       true,
       "always"
@@ -98,7 +98,14 @@
       }
     ],
     "unified-signatures": false,
-    "variable-name": false,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "require-const-for-all-caps",
+        "check-format",
+        "allow-leading-underscore"
+      ]
+    },
     "whitespace": [
       true,
       "check-branch",
@@ -128,7 +135,6 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "no-access-missing-member": true,
     "defocus": true,
     "finnish-notation": true
   }
