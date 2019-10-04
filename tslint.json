@@ -101,7 +101,6 @@
     "variable-name": {
       "options": [
         "ban-keywords",
-        "require-const-for-all-caps",
         "check-format",
         "allow-leading-underscore"
       ]
