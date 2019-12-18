@@ -8,15 +8,14 @@
   "scripts": {
     "lerna": "lerna",
     "build": "lerna run build",
-    "release": "standard-version && lerna publish"
+    "release": "lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "cz-conventional-changelog": "3.0.2",
-    "husky": "^3.0.9",
-    "lerna": "^3.16.4",
-    "standard-version": "^7.0.1"
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0",
+    "lerna": "^3.19.0"
   },
   "config": {
     "commitizen": {
@@ -26,12 +25,6 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "standard-version": {
-    "skip": {
-      "bump": true,
-      "tag": true
     }
   }
 }

@@ -4,5 +4,10 @@
   "packages": [
     "packages/*"
   ],
-  "npmClient": "yarn"
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    }
+  }
 }
