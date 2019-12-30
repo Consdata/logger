@@ -3,5 +3,5 @@ node_js:
   - "10"
 script:
   - npm test
-  - npm run-script lera init
+  - npm run-script lerna init
   - npm run-script build
