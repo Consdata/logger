@@ -5,3 +5,8 @@ script:
   - npm test
   - npm run-script lerna init
   - npm run-script build
+deploy:
+  provider: script
+  script: npm run-script lerna publish
+  skip_cleanup: true
+  if: tag IS blank
