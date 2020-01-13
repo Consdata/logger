@@ -1,3 +1,4 @@
+if: tag IS blank
 language: node_js
 node_js:
   - "10"
@@ -12,4 +13,4 @@ deploy:
   on:
     node: "10"
     branch: release
-  if: tag IS blank
+
