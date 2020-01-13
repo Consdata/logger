@@ -10,7 +10,7 @@ before_deploy:
   - git checkout master
 deploy:
   provider: script
-  script: npm run-script "lerna publish --yes"
+  script: "npm run-script lerna publish --yes"
   skip_cleanup: true
   on:
     node: "10"
