@@ -6,6 +6,8 @@ script:
   - npm test
   - npm run-script lerna init
   - npm run-script build
+before_deploy:
+  - git checkout master
 deploy:
   provider: script
   script: "npm run-script lerna publish"
