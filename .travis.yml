@@ -11,7 +11,6 @@ before_deploy:
 deploy:
   provider: script
   script: "npm run-script lerna publish"
-  skip_cleanup: true
   on:
     node: "10"
     branch: master
