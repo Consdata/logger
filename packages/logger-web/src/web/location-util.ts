@@ -20,11 +20,11 @@ export class LocationUtil {
     const params: SearchParamsData = {};
 
     raw.split(separator)
-      .map(val => ({
-        key: val.split('=')[0],
-        value: val.indexOf('=') >= 0 ? val.substr(val.indexOf('=') + 1) : '',
-      }))
-      .forEach(queryParam => params[queryParam.key] = queryParam.value);
+        .map(val => ({
+          key: val.split('=')[0],
+          value: val.indexOf('=') >= 0 ? val.substr(val.indexOf('=') + 1) : '',
+        }))
+        .forEach(queryParam => params[queryParam.key] = queryParam.value);
 
     return params;
   }
