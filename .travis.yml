@@ -16,7 +16,7 @@ deploy:
   script: "lerna publish --yes"
   skip_cleanup: true
   api_key:
-    secure: tE3aUeICpvvON8MF5dpt//eEVXzWM5pIp0uQo0paKjHNK4p6UCfurmtZT+Q4JoW4sBIpJY7klgf+YCOhzgIT1qPlgfRNu4vZeq3xRbTK64jJKeZwwAu07uQZT/CifY7PHx4Ol8bk+272Zf7QYovOUotmTEgZpWI3BGBL9Hm1GDgFV0Cv+x59XDITe3yINKp2M0GkO2AdrI30pvEr2HF16a3iBrC5M54O6wh3crcAykKcs+ZZ2qLeV5vsmrlvhmf90v8hVqIB7wBCnozAfxctP5hGOiqyUxcY6cMsHQEOXkmRmmmLUNgstq1cJJwkiOgDM+T/Z286ZWKLetvL0pxl/BZuVp7+PaS/uHEoXppBh5K2XTa/8AsF79HrLzD2WHgbkh3Iann0QTORGKlxFYztr/ZdLYxm6U/A0iRPBmiUx4en8+vnCiUQfGjooc+PIH9L46fV2CFQLFMm2MD88oS1njO4Bux1QB9Nb6J4P4TlCrx6f05Q0I96BudI4d4ZZqbz3+MmbsW2lfQa2l0JuD7yHHW+lY+MYjmcsohyirlRMK5eYHq486zBq9cfB+JaJt2beGjStHxW7AnRQnn/SZRf0Rw+LW8H7G8yIITxrp1y5Fb9uO7/RO/nHcyxRBJOGltYDRiqKOtFldkA0MhgPgz4LboqppARz63AP6QHtPL4O+g=
+    secure: ${NPM_TOKEN}
   on:
     node: "10"
     branch: master
