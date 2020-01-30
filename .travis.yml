@@ -10,8 +10,8 @@ before_deploy:
   - git checkout master
   - git config --local user.name "Travis"
   - git config --local user.email "grzegorz.lipecki@gmail.com"
-  - git remote add origin-token https://${GitHub_Token}@github.com/Consdata/logger.git
-  - git push origin-token master
+  - git remote add origin https://${GitHub_Token}@github.com/Consdata/logger.git
+  - git push origin master
 deploy:
   provider: script
   script: "lerna publish --yes"
