@@ -18,5 +18,6 @@ deploy:
   skip_cleanup: true
   on:
     node: "10"
+    repo: https://${GitHub_Token}@github.com/Consdata/logger.git
     branch: master
 
