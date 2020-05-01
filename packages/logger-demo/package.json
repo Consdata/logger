@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@consdata/logger-api": "^0.13.0",
@@ -16,10 +18,12 @@
     "ts-loader": "^6.1.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "tslint": "5.13.0",
     "typescript": "3.3.3333"
-  }
+  },
+  "snyk": true
 }
