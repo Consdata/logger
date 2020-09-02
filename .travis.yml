@@ -11,12 +11,12 @@ before_deploy:
   - git config --local user.name "Travis"
   - git config --local user.email "grzegorz.lipecki@gmail.com"
   - git remote set-url origin "https://${GitHub_Token}@github.com/Consdata/logger.git"
-  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-  - npm whoami
 deploy:
   provider: script
   script: "lerna publish --yes"
   skip_cleanup: true
+  api_key:
+    secure: ${NPM_TOKEN}
   on:
     node: "10"
     branch: master
