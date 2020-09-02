@@ -11,6 +11,7 @@ before_deploy:
   - git config --local user.name "Travis"
   - git config --local user.email "grzegorz.lipecki@gmail.com"
   - git remote set-url origin "https://${GitHub_Token}@github.com/Consdata/logger.git"
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN_B}" > ~/.npmrc
   - npm whoami
 deploy:
   provider: script
