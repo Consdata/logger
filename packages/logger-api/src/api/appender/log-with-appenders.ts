@@ -68,7 +68,7 @@ export class LoggerWithAppenders implements Logger {
       hour: this.leadingZeros(2, '0', '' + date.getHours()),
       milisecond: this.leadingZeros(3, '0', '' + date.getMilliseconds()),
       minute: this.leadingZeros(2, '0', '' + date.getMinutes()),
-      month: this.leadingZeros(2, '0', '' + date.getMonth() + 1),
+      month: this.leadingZeros(2, '0', '' + (date.getMonth() + 1)),
       second: this.leadingZeros(2, '0', '' + date.getSeconds()),
       year: date.getFullYear(),
     };
