@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "logger-api": "packages/logger-api",
+    "logger-console": "packages/logger-console",
+    "logger-demo": "packages/logger-demo",
+    "logger-demo-e2e": "packages/logger-demo-e2e",
+    "logger-web": "packages/logger-web"
+  }
+}

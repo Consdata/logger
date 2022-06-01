@@ -1,0 +1,70 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/logger-demo/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/logger-demo",
+        "compiler": "babel",
+        "index": "packages/logger-demo/src/index.html",
+        "baseHref": "/",
+        "main": "packages/logger-demo/src/main.ts",
+        "polyfills": "packages/logger-demo/src/polyfills.ts",
+        "tsConfig": "packages/logger-demo/tsconfig.app.json",
+        "assets": [
+          "packages/logger-demo/src/favicon.ico",
+          "packages/logger-demo/src/assets"
+        ],
+        "styles": ["packages/logger-demo/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/logger-demo/src/environments/environment.ts",
+              "with": "packages/logger-demo/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "logger-demo:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "logger-demo:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/logger-demo/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/logger-demo"],
+      "options": {
+        "jestConfig": "packages/logger-demo/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

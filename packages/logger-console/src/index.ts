@@ -1,2 +1,2 @@
-export * from './console/console-log-appender';
-export * from './message/console-message-builder';
+export * from './lib/console/console-log-appender';
+export * from './lib/message/console-message-builder';
