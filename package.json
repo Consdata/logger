@@ -2,7 +2,11 @@
   "name": "consdata",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:test": "yarn nx run-many --target test --all",
+    "build:build": "yarn nx run-many --target build --all",
+    "ci": "yarn build:test && yarn build:build"
+  },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",
