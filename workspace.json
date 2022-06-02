@@ -2,6 +2,26 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "release": {
+      "targets": {
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "node tools/scripts/publish.mjs {args.bump}"
+          },
+          "dependsOn": [
+            {
+              "projects": "dependencies",
+              "target": "build"
+            }
+          ]
+        }
+      },
+      "root": ".",
+      "implicitDependencies": [
+        "logger-api", "logger-console", "logger-web"
+      ]
+    },
     "logger-api": "packages/logger-api",
     "logger-console": "packages/logger-console",
     "logger-demo": "packages/logger-demo",

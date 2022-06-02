@@ -1,9 +1,4 @@
 /**
- * This is a minimal script to publish your package to "npm".
- * This is meant to be used as-is or customize as you see fit.
- *
- * This script is executed on "dist/path/to/library" as "cwd" by default.
- *
  * You might need to authenticate with NPM before running this script.
  */
 
@@ -11,51 +6,39 @@ import { readCachedProjectGraph } from '@nrwl/devkit';
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
 import chalk from 'chalk';
+import promptSync from 'prompt-sync';
+import semver from 'semver';
 
-function invariant(condition, message) {
-  if (!condition) {
-    console.error(chalk.bold.red(message));
-    process.exit(1);
+function changePackageJsonVesion(path, version) {
+  const json = JSON.parse(readFileSync(path).toString());
+  console.log(`  from ${json.version} to ${version} for ${path}`);
+  json.version = version;
+  writeFileSync(path, JSON.stringify(json, null, 2));
+}
+
+const [, , bump = undefined] = process.argv;
+
+const graph = readCachedProjectGraph();
+const mainPackajgeJson = JSON.parse(readFileSync(`package.json`).toString());
+
+if (['major', 'minor', 'patch'].indexOf(bump) >= 0) {
+  const nextVersion = semver.inc(mainPackajgeJson.version, bump);
+  console.log(chalk.green(`Bumping project version to next minor: ${nextVersion}`));
+
+  for (const lib of graph.dependencies['release']) {
+    console.log(`changing package.json for ${lib.target}`);
+    changePackageJsonVesion(`dist/packages/${lib.target}/package.json`, nextVersion);
+    changePackageJsonVesion(`packages/${lib.target}/package.json`, nextVersion);
   }
 }
 
-// Executing publish script: node path/to/publish.mjs {name} --version {version} --tag {tag}
-// Default "tag" to "next" so we won't publish the "latest" tag by accident.
-const [, , name, version, tag = 'next'] = process.argv;
+const prompt = promptSync({sigint: true})
+const otp = prompt(`Enter npm OTP code: `)
 
-// A simple SemVer validation to validate the version
-const validVersion = /^\d+\.\d+\.\d(-\w+\.\d+)?/;
-invariant(
-  version && validVersion.test(version),
-  `No version provided or version did not match Semantic Versioning, expected: #.#.#-tag.# or #.#.#, got ${version}.`
-);
-
-const graph = readCachedProjectGraph();
-const project = graph.nodes[name];
-
-invariant(
-  project,
-  `Could not find project "${name}" in the workspace. Is the project.json configured correctly?`
-);
-
-const outputPath = project.data?.targets?.build?.options?.outputPath;
-invariant(
-  outputPath,
-  `Could not find "build.options.outputPath" of project "${name}". Is project.json configured  correctly?`
-);
-
-process.chdir(outputPath);
-
-// Updating the version in "package.json" before publishing
-try {
+for (const lib of graph.dependencies['release']) {
+  process.chdir(`dist/packages/${lib.target}`);
   const json = JSON.parse(readFileSync(`package.json`).toString());
-  json.version = version;
-  writeFileSync(`package.json`, JSON.stringify(json, null, 2));
-} catch (e) {
-  console.error(
-    chalk.bold.red(`Error reading package.json file from library build output.`)
-  );
+  console.log(chalk.green(`Publishing to npm ${lib.target}@${json.version}`));
+  execSync(`npm publish --access public --tag latest --otp ${otp}`);
+  process.chdir(`../../..`);
 }
-
-// Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag}`);
