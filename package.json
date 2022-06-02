@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "build:test": "yarn nx run-many --target test --all",
-    "build:build": "yarn nx run-many --target build --all",
-    "ci": "yarn build:test && yarn build:build",
+    "nx": "nx",
+    "build:test": "npm run -- nx run-many --target test --all",
+    "build:build": "npm run -- nx run-many --target build --all",
+    "ci": "npm run -- build:test && npm run -- build:build",
     "prepare": "husky install",
     "commit": "cz"
   },
