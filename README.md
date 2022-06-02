@@ -1,6 +1,6 @@
 ### Commit with wizard
 
-To commit with commitizen run `npm run commit`.
+To commit with commitizen install comitizen globally and run `git cz`.
 
 ### Release
 
