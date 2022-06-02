@@ -5,7 +5,9 @@
   "scripts": {
     "build:test": "yarn nx run-many --target test --all",
     "build:build": "yarn nx run-many --target build --all",
-    "ci": "yarn build:test && yarn build:build"
+    "ci": "yarn build:test && yarn build:build",
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "private": true,
   "dependencies": {
@@ -14,6 +16,9 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.0.0",
+    "@commitlint/config-conventional": "17.0.0",
+    "cz-conventional-changelog": "3.3.0",
     "@nrwl/cli": "14.1.9",
     "@nrwl/cypress": "14.1.9",
     "@nrwl/eslint-plugin-nx": "14.1.9",
@@ -24,18 +29,24 @@
     "@nrwl/workspace": "14.1.9",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
-    "@typescript-eslint/eslint-plugin": "~5.18.0",
-    "@typescript-eslint/parser": "~5.18.0",
+    "@typescript-eslint/eslint-plugin": "5.18.0",
+    "@typescript-eslint/parser": "5.18.0",
     "babel-jest": "27.5.1",
-    "cypress": "^9.1.0",
-    "eslint": "~8.12.0",
+    "cypress": "9.1.0",
+    "eslint": "8.12.0",
     "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-cypress": "2.10.3",
+    "husky": "8.0.0",
     "jest": "27.5.1",
     "nx": "14.1.9",
     "prettier": "^2.5.1",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
-    "typescript": "~4.6.2"
+    "typescript": "4.6.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
