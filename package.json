@@ -24,7 +24,7 @@
     "@nrwl/jest": "14.1.9",
     "@nrwl/js": "14.1.9",
     "@nrwl/linter": "14.1.9",
-    "@nrwl/web": "14.1.9",
+    "@nrwl/web": "14.8.6",
     "@nrwl/workspace": "14.1.9",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
